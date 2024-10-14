@@ -1,0 +1,133 @@
+#info-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%; 
+    max-width: 400px; 
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); */
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#info-container a {
+    display: block;
+    margin: 12px 0;
+    color: #00aaff;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#info-container a:hover {
+    text-decoration: underline;
+}
+
+#info-container div div {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: black;
+    font-weight: 500;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+#info-container div p{font-size: 1.5vh}
+
+.flex-items:nth-child(1), .flex-items:nth-child(2), .flex-items:nth-child(3) {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.flex-items:nth-child(2){background: transparent;}
+.flex-items:nth-child(2) div{background: #fff;}
+
+#scan_card_title{
+    opacity: 1;
+    transition: opacity .5s ease-out; 
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 4vh;
+    color: #ededed;
+    mix-blend-mode: overlay;
+
+    /* Flexbox for centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Full screen centering */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  
+
+    width: 350px;  
+    height: auto;
+    z-index: 2;
+    background: transparent;
+
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-text-stroke-width: 0.05px;
+}
+
+
+#scan_card_title h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 6vh;
+    color: inherit;
+}
+
+/* Header logo */
+header {
+    position: absolute;
+    top: 1.2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999; 
+}
+
+header a {
+    display: inline-block; 
+    z-index: 999; 
+    text-align: center;
+}
+
+header img {
+    max-width: 15vh; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+/* Footer */
+footer {
+    background-color: transparent; 
+    color: #333; 
+    text-align: center; 
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+  
+footer p {
+    font-family: "Bebas Neue", sans-serif;
+    margin: 0; 
+    font-size: 14px;
+}

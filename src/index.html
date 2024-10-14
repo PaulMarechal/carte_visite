@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" media="all" type="text/css" href="./style.css" />
+    </head>
+    <body>
+        <header>
+            <a href="https://devxr.fr">
+                <img src="https://devxr.fr/assets/images/logo/logo_devxr.png" alt="Logo DevXR.fr">
+            </a>
+        </header>
+
+        <div id="info-container">
+            <div class="flex-container">
+                <div class="flex-items">
+                    <p>
+                        <strong>🎩 Découvrez la magie de la réalité augmentée ! </strong><br> 
+                        Retournez la carte pour explorer un exemple immersif en 3D et imaginez ce que cette technologie peut faire pour vos projets !
+                    </p>
+                </div>
+                <div class="flex-items">
+                    <div>
+                        <p>💼 <strong>Besoin d'un expert en innovation digitale ?</strong></p>
+                        <a href="https://devxr.fr" target="_blank">Visitez mon site web pour en savoir plus !</a>
+                    </div>
+                    <div>
+                        <p>📞 <strong>Un projet en tête ?</strong></p>
+                        <a href="tel:+33648357374">Appelez-moi : 06 48 35 73 74</a>
+                    </div>
+                    <div>
+                        <p>📧 <strong>Envie de collaborer ?</strong></p>
+                        <a href="mailto:contactme@paulmarechal.xyz">Envoyez-moi un mail</a>
+                    </div>
+                </div>
+                <div class="flex-items">
+                    <div>
+                        <p>✨ <em>Votre avenir digital commence ici. Ne laissez pas passer cette opportunité !</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a-scene mindar-image="imageTargetSrc: https://devxr.fr/carte/assets/targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+            <a-assets>
+                <a-asset-item id="bearModel" src="https://devxr.fr/carte/assets/test_character_4.gltf"></a-asset-item>
+                <a-asset-item id="raccoonModel" src="https://devxr.fr/carte/assets/test_character_4.gltf"></a-asset-item>
+            </a-assets>
+
+            <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+            <!-- Modèle 3D pour targetIndex: 0 -->
+            <a-entity mindar-image-target="targetIndex: 0">
+                <a-gltf-model rotation="90 0 0" position="0 0 0" scale="0.05 0.05 0.05" src="#raccoonModel" animation-mixer></a-gltf-model>
+            </a-entity>
+
+            <!-- Affichage du conteneur d'infos pour targetIndex: 1 -->
+            <a-entity mindar-image-target="targetIndex: 1" event-set__show="visible: true; _event: targetFound" event-set__hide="visible: false; _event: targetLost" id="info-handler"></a-entity>
+        </a-scene>
+
+        <div id="scan_card_title">
+            <h1>
+                Scannez la carte pour découvrir plus d'informations 
+            </h1> 
+        </div>
+
+        <footer>
+            <p>&copy; 2024 DevXR. All rights reserved.</p>
+        </footer>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
