@@ -1,13 +1,27 @@
-// Récupérer les éléments DOM
+const scanCardTitle = document.getElementById('scan_card_title');
 const infoContainer = document.getElementById('info-container');
-const infoHandler = document.getElementById('info-handler');
+const target0 = document.getElementById('target-0')
+const target1 = document.getElementById('target-1')
 
-// Afficher les infos quand targetIndex: 1 est détecté
-infoHandler.addEventListener('targetFound', () => {
+function hideScanMessage() {
+    scanCardTitle.style.display = 'none';
+}
+
+function showInfoContainer() {
     infoContainer.style.display = 'block';
+}
+
+function resetUI() {
+    scanCardTitle.style.display = 'block';
+    infoContainer.style.display = 'none';
+}
+
+target0.addEventListener('targetFound', hideScanMessage);
+target0.addEventListener('targetLost', resetUI);
+
+target1.addEventListener('targetFound', () => {
+    hideScanMessage();
+    showInfoContainer();
 });
 
-// Cacher les infos quand targetIndex: 1 est perdu
-infoHandler.addEventListener('targetLost', () => {
-    infoContainer.style.display = 'none';
-});
+target1.addEventListener('targetLost', resetUI);
