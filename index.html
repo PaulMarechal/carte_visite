@@ -58,6 +58,37 @@
             <!-- Modèle 3D pour targetIndex: 0 -->
             <a-entity mindar-image-target="targetIndex: 0">
                 <a-gltf-model rotation="90 0 0" position="0 0 0" scale="0.05 0.05 0.05" src="#raccoonModel" animation-mixer></a-gltf-model>
+
+                <!-- Boutons en 3D -->
+                <a-plane 
+                    position="0.2 0.2 0" 
+                    width="0.5" 
+                    height="0.2" 
+                    color="#007bff" 
+                    text="value: Visitez mon site; color: white;"
+                    class="clickable"
+                    event-set__click="window.open('https://devxr.fr', '_blank')">
+                </a-plane>
+
+                <a-plane 
+                    position="0.2 -0.1 0" 
+                    width="0.5" 
+                    height="0.2" 
+                    color="#28a745" 
+                    text="value: Appelez-moi; color: white;"
+                    class="clickable"
+                    event-set__click="window.location.href='tel:+33648357374'">
+                </a-plane>
+
+                <a-plane 
+                    position="0.2 -0.4 0" 
+                    width="0.5" 
+                    height="0.2" 
+                    color="#dc3545" 
+                    text="value: Envoyez-moi un mail; color: white;"
+                    class="clickable"
+                    event-set__click="window.location.href='mailto:contactme@paulmarechal.xyz'">
+                </a-plane>
             </a-entity>
 
             <!-- Affichage du conteneur d'infos pour targetIndex: 1 -->
