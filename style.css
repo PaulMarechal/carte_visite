@@ -35,12 +35,10 @@
     color: black;
     font-weight: 500;
     width: 96%;
-    margin-left: -10px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 #info-container div p{
-    font-size: 15px;
+    font-size: 14px;
     z-index: 2;
     position: relative;
     margin: 5px 0;
@@ -50,7 +48,7 @@
 }
 
 #info-container div p strong{
-    font-size: 20px;
+    font-size: 17px;
     font-family: "Bebas Neue", sans-serif;
 }
 
@@ -71,12 +69,12 @@
 
 .flex-items:nth-child(2){background: transparent;}
 .flex-items:nth-child(2) div{background: #fff;}
-.flex-items:nth-child(2) div div{padding: 5px 10px!important;}
 
 .flex-items div{
     display: inline-flex;
-    margin: 4px 0;
 }
+
+.flex-items:nth-child(2) div{margin: 3px 0;}
 
 .flex-items div div{
     display: block;
@@ -87,8 +85,23 @@
     margin-left: -20px;
     margin-top: -5px;
     stroke: #fff;
-    background: #82d4ff;
-    border-radius: 5px 0 10px 0px;
+    border-radius: 8px 0px 20px 0px;
+    padding: 2px 5px 5px 2px;
+}
+
+.flex-items div:nth-child(1) svg{
+    background: #ffbe0b80;
+    stroke: #ffbe0b;
+}
+
+.flex-items div:nth-child(2) svg{
+    background: #ff006e80;
+    stroke: #ff006e;
+}
+
+.flex-items div:nth-child(3) svg{
+    background: #3a86ff80;
+    stroke: #3a86ff;
 }
 
 #scan_card_title{
