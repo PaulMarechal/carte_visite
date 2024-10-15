@@ -13,13 +13,14 @@
     max-width: 400px; 
     /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); */
     font-family: "Bebas Neue", sans-serif;
+
 }
 
 #info-container a {
     display: block;
     margin: 12px 0;
     color: #00aaff;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
     font-weight: bold;
 }
@@ -30,14 +31,21 @@
 
 #info-container div div {
     margin-top: 15px;
-    padding: 10px 20px;
+    padding: 10px 0px 10px 20px;
     border-radius: 8px;
     color: black;
     font-weight: 500;
+    width: 96%;
+    margin-left: -10px;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
-#info-container div p{font-size: 1.5vh}
+#info-container div p{
+    font-size: 17px;
+    z-index: 2;
+    position: relative;
+    margin: 5px 0;
+}
 
 .flex-items:nth-child(1), .flex-items:nth-child(2), .flex-items:nth-child(3) {
     display: block;
@@ -52,6 +60,24 @@
 
 .flex-items:nth-child(2){background: transparent;}
 .flex-items:nth-child(2) div{background: #fff;}
+
+.flex-items div{
+    display: inline-flex;
+    margin: 4px 0;
+}
+
+.flex-items div div{
+    display: block;
+}
+
+.flex-items div svg{
+    position: absolute;
+    margin-left: -20px;
+    margin-top: -10px;
+    stroke: #fff;
+    background: #82d4ff;
+    border-radius: 5px 0 28px 0px;
+}
 
 #scan_card_title{
     opacity: 1;
@@ -130,4 +156,18 @@ footer p {
     font-family: "Bebas Neue", sans-serif;
     margin: 0; 
     font-size: 14px;
+}
+
+/* Test overlay */
+.a-dom-overlay:not(.a-no-style) {
+    padding: 0 !important;
+    pointer-events: auto !important;
+}
+
+#touch-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
