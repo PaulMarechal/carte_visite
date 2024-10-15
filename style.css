@@ -20,7 +20,7 @@
     display: block;
     margin: 12px 0;
     color: #00aaff;
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     font-weight: bold;
 }
@@ -30,8 +30,7 @@
 }
 
 #info-container div div {
-    margin-top: 15px;
-    padding: 10px 0px 10px 20px;
+    padding: 5px 0px 5px 20px;
     border-radius: 8px;
     color: black;
     font-weight: 500;
@@ -41,10 +40,18 @@
 }
 
 #info-container div p{
-    font-size: 17px;
+    font-size: 15px;
     z-index: 2;
     position: relative;
     margin: 5px 0;
+    font-family: Poppins, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+#info-container div p strong{
+    font-size: 20px;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .flex-items:nth-child(1), .flex-items:nth-child(2), .flex-items:nth-child(3) {
@@ -58,8 +65,13 @@
     z-index: 10;
 }
 
+.flex-items:nth-child(1), .flex-items:nth-child(3){
+    padding: 10px 20px!important;
+}
+
 .flex-items:nth-child(2){background: transparent;}
 .flex-items:nth-child(2) div{background: #fff;}
+.flex-items:nth-child(2) div div{padding: 5px 10px!important;}
 
 .flex-items div{
     display: inline-flex;
@@ -73,10 +85,10 @@
 .flex-items div svg{
     position: absolute;
     margin-left: -20px;
-    margin-top: -10px;
+    margin-top: -5px;
     stroke: #fff;
     background: #82d4ff;
-    border-radius: 5px 0 28px 0px;
+    border-radius: 5px 0 10px 0px;
 }
 
 #scan_card_title{
