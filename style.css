@@ -34,7 +34,7 @@
     border-radius: 8px;
     color: black;
     font-weight: 500;
-    width: 96%;
+    width: -webkit-fill-available;
 }
 
 #info-container div p{
@@ -67,7 +67,7 @@
     padding: 10px 20px!important;
 }
 
-.flex-items:nth-child(2){background: transparent;}
+.flex-items:nth-child(2){background: transparent; padding:2px 8px!important;}
 .flex-items:nth-child(2) div{background: #fff;}
 
 .flex-items div{
