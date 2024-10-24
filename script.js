@@ -1,16 +1,12 @@
 function requestCameraAccess() {
     navigator.mediaDevices.getUserMedia({ video: true })
         .then((stream) => {
-            console.log("Accès à la caméra accordé");
             startARScene(); 
         })
         .catch((error) => {
             if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
-                console.log("Accès à la caméra refusé, redirection vers devxr.fr");
                 window.location.href = 'https://devxr.fr';
-            } else {
-                console.error("Erreur lors de la demande d'accès à la caméra:", error);
-            }
+            } 
         });
 }
 
