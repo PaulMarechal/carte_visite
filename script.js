@@ -1,3 +1,29 @@
+function requestCameraAccess() {
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then((stream) => {
+            console.log("Accès à la caméra accordé");
+            startARScene(); 
+        })
+        .catch((error) => {
+            if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
+                console.log("Accès à la caméra refusé, redirection vers devxr.fr");
+                window.location.href = 'https://devxr.fr';
+            } else {
+                console.error("Erreur lors de la demande d'accès à la caméra:", error);
+            }
+        });
+}
+
+function startARScene() {
+    document.querySelector('a-scene').style.display = 'block';
+}
+
+window.onload = function() {
+    document.querySelector('a-scene').style.display = 'none';
+    requestCameraAccess();
+};
+
+
 const scanCardTitle = document.getElementById('scan_card_title');
 const infoContainer = document.getElementById('info-container');
 const target0 = document.getElementById('target-0')
